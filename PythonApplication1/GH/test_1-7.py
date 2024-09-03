@@ -42,7 +42,7 @@ def validate_contact_form():
                 print(f"Label '{label_element.text}' has the expected white color.")
                 
         # Scroll down the page
-        scroll_position = 2000  # Adjust this value based on your observations
+        scroll_position = 2000  # Adjust if needed
         driver.execute_script("window.scrollTo(0, {});".format(scroll_position))
 
         # Find the submit button and click

@@ -7,7 +7,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 def test_epam_search():
     """Tests the search functionality on EPAM.com."""
 
-    driver = webdriver.Chrome()  # Replace with your preferred browser driver
+    driver = webdriver.Chrome()  # Replace with preferred browser driver
 
     try:
         # Open EPAM.com

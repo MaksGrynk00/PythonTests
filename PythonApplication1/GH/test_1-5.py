@@ -10,7 +10,7 @@ def check_location_switching():
 
     regions = ["AMERICAS", "EMEA", "APAC"]
 
-    driver = webdriver.Chrome()  # Replace with your preferred browser driver
+    driver = webdriver.Chrome()  # Replace with preferred browser driver
 
     try:
         # Open epam.com
@@ -23,7 +23,7 @@ def check_location_switching():
         )
         accept_cookies_button.click()
 
-        # Scroll to a specific position within the page (adjust as needed)
+        # Scroll to a specific position within the page 
         scroll_position = 8300  # Adjust this value based on your observations
         driver.execute_script("window.scrollTo(0, {});".format(scroll_position))
         

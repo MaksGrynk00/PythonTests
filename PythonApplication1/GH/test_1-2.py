@@ -16,7 +16,7 @@ def check_policies():
         "WEB ACCESSIBILITY"
     ]
 
-    driver = webdriver.Chrome()  # Replace with your preferred browser driver
+    driver = webdriver.Chrome()  
 
     try:
         # Open epam.com
