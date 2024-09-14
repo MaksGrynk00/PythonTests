@@ -1,20 +1,11 @@
 import pytest
 import requests
 
-@pytest.fixture
-def api_url():
-    return "https://petstore.swagger.io/v2/user/login"
+""" Verify that allows login as a User """
 
-@pytest.fixture
-def login_credentials():
-    return {
-        "username": "UI0000123",
-        "password": "UI0000123"
-    }
-
-def test_login_user(api_url, login_credentials):
+def test_login_user(api_url1, login_credentials):
     # Build the request URL with query parameters
-    url = f"{api_url}?username={login_credentials['username']}&password={login_credentials['password']}"
+    url = f"{api_url1}?username={login_credentials['username']}&password={login_credentials['password']}"
 
     # Make the GET request
     response = requests.get(url)

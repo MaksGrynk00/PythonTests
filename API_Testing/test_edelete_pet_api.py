@@ -1,17 +1,11 @@
 import pytest
 import requests
 
-@pytest.fixture
-def api_url():
-    return "https://petstore.swagger.io/v2/pet"
+"""	Verify that allows deleting Pet  """
 
-@pytest.fixture
-def pet_id():
-    return 111  # Replace with the actual pet ID you want to delete
-
-def test_delete_pet(api_url, pet_id):
+def test_delete_pet(api_url7, pet_id):
     # Construct the deletion URL with the provided pet ID
-    delete_url = f"{api_url}/{pet_id}"
+    delete_url = f"{api_url7}/{pet_id}"
 
     # Make the DELETE request
     response = requests.delete(delete_url)
