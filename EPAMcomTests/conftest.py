@@ -8,8 +8,8 @@ from webdriver_manager.firefox import GeckoDriverManager
 # Setup Chrome/Firefox
 @pytest.fixture()
 def browser():
-    driver = webdriver.Firefox()
-    # driver = webdriver.Chrome()
+    # driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
     driver.set_window_size(1200, 800)
     yield driver
     driver.quit()

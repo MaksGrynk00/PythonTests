@@ -12,7 +12,7 @@ def first_name_length():
 # Setup Chrome/Firefox
 @pytest.fixture(scope='session')
 def browser():
-    # driver = webdriver.Chrome()
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
+    # driver = webdriver.Firefox()
     yield driver
     driver.quit()
