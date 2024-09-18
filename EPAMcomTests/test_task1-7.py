@@ -57,4 +57,3 @@ def test_validate_contact_form(browser):
             border_color.lower() == "rgb(255, 77, 64)"
         ), f"Label '{label_element.text}' is not highlighted in red."
         print(f"Label '{label_element.text}' is highlighted as required (red border).")
-    browser.quit()

@@ -28,5 +28,3 @@ def test_change_language_to_ukrainian(browser):
     expected_url = "https://careers.epam.ua/"
     assert browser.current_url == expected_url, f"Language change failed. Expected URL: {expected_url}"
     print("Language was changed to Ukrainian.")
-
-    browser.quit()

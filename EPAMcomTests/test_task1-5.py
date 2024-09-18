@@ -58,5 +58,3 @@ def test_check_location_switching(browser, region):
     assert displayed_element.is_displayed(), f"{regions[region]} element not found after switching."
 
     print(f"{region} location switch successful")
-
-    browser.quit()

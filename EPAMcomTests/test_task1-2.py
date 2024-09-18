@@ -39,5 +39,3 @@ def test_check_theme_switch(browser):
 
     assert new_theme_label_locator.is_displayed(), f"Theme switch not switched. "
     print(f"Theme switched to 'Light Mode' ")
-
-    browser.quit()

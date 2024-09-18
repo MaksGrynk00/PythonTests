@@ -1,6 +1,4 @@
 import pytest
-import os
-import shutil
 from selenium import webdriver
 
 # Setup Chrome/Firefox
@@ -32,18 +30,8 @@ def region(request):
 def search_term(request):
     return request.param
 
-# Define the path where the downloads are stored
-DOWNLOAD_DIR = "/path/to/your/download/directory"
-
-@pytest.fixture(scope='function')
-def get_download_dir():
-    if not os.path.exists(DOWNLOAD_DIR):
-        os.makedirs(DOWNLOAD_DIR)
-
-    yield
-    shutil.rmtree(DOWNLOAD_DIR)
-
-# Fixture to provide download directory path
-@pytest.fixture
-def get_download_dir():
-  return os.path.join(os.environ["USERPROFILE"], "Downloads")
+# test1-9
+@pytest.fixture()
+def downloads():
+    download_dir = 'C:\\Users\\Maksym_Grynkiv\\Downloads'
+    return download_dir

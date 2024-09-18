@@ -103,7 +103,7 @@ def api_url6():
 
 @pytest.fixture
 def image_path():
-    return "C:\\Users\\Maksym_Grynkiv\\Downloads\\th.jpg"  # Replace with the actual image path
+    return "C:\\Users\\Maksym_Grynkiv\\source\\repos\\MaksGrynk00\\PythonTest\\API_Testing\\th.jpg"  # the image path
 
 # delete pet test
 @pytest.fixture
