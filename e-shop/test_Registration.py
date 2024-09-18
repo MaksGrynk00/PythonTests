@@ -1,6 +1,4 @@
 import random
-import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -45,4 +43,3 @@ def test_verify_registration(browser, first_name_length):
 
     print(f"Registration successful")
 
-    browser.quit()

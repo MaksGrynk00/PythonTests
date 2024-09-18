@@ -1,12 +1,10 @@
-import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def test_verify_remove_from_cart(browser):
     """Verifies removing an item from the shopping cart."""
-    browser.get("https://demowebshop.tricentis.com/desktops")
+    browser.get("https://demowebshop.tricentis.com/cell-phones")
     # Find first product item within grid
     first_product_item = WebDriverWait(browser, 10).until(
         EC.presence_of_element_located(
@@ -69,5 +67,3 @@ def test_verify_remove_from_cart(browser):
 
     assert "empty" in empty_cart_text.lower(), f"Product '{product_title}' might not be removed"
     print(f"Success: Product '{product_title}' removed from cart.")
-
-    browser.quit()

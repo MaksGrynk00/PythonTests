@@ -61,5 +61,3 @@ def test_verify_add_to_whitelist(browser):
     #     f"Mismatch in product titles. Added: '{product_title}', Wishlist: '{wishlist_product_title_text}'"
     # )
     # print(f"Success: Product '{product_title}' found in wishlist.")
-
-    browser.quit()

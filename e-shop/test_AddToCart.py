@@ -1,9 +1,6 @@
-import pytest
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium import webdriver
-
 
 def test_verify_add_to_cart(browser):
     """Verifies adding an item to the shopping cart"""
@@ -52,4 +49,3 @@ def test_verify_add_to_cart(browser):
         f"Mismatch in product titles. Added: '{product_title}', shopping cart: '{cart_product_title_text}'"
     )
     print("Success: Product found to shopping cart.")
-    browser.quit()

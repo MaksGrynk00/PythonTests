@@ -39,5 +39,3 @@ def test_verify_sorting_options(browser):
     assert fourth_option in browser.current_url, f"URL does not reflect fourth option: {fourth_option}"
 
     print("Sorting options verified successfully.")
-
-    browser.quit()

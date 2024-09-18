@@ -44,5 +44,3 @@ def test_verify_login(browser):
     assert user_email.text == "bdkcjns@cdsjn.dd", "Incorrect user email after login"
 
     print("Login successful!")
-
-    browser.quit()
