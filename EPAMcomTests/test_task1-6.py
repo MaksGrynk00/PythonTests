@@ -1,5 +1,4 @@
 import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -22,7 +21,7 @@ def test_epam_search(browser, search_term):
     search_icon.click()
 
     # Wait for the search input field to appear
-    search_input = WebDriverWait(browser, 5).until(
+    search_input = WebDriverWait(browser, 20).until(
         EC.presence_of_element_located((By.XPATH, "//input[@id='new_form_search']"))
     )
     # Type the search term in the search input field

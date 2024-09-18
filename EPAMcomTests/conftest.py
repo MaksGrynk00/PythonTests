@@ -1,9 +1,7 @@
 import pytest
 import os
+import shutil
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
 
 # Setup Chrome/Firefox
 @pytest.fixture()
@@ -26,8 +24,24 @@ def expected_policy(request):
 
 # test1-5
 @pytest.fixture(scope="function")
-def expected_policy(request):
+def region(request):
     return request.param
+
+# test1-6
+@pytest.fixture(scope="function")
+def search_term(request):
+    return request.param
+
+# Define the path where the downloads are stored
+DOWNLOAD_DIR = "/path/to/your/download/directory"
+
+@pytest.fixture(scope='function')
+def get_download_dir():
+    if not os.path.exists(DOWNLOAD_DIR):
+        os.makedirs(DOWNLOAD_DIR)
+
+    yield
+    shutil.rmtree(DOWNLOAD_DIR)
 
 # Fixture to provide download directory path
 @pytest.fixture
