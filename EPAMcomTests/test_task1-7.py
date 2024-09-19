@@ -13,9 +13,8 @@ def test_validate_contact_form(browser):
     accept_cookies_button = WebDriverWait(browser, 20).until(
         EC.element_to_be_clickable((By.XPATH, ".//button[text()='Accept All']"))
     )
-    accept_cookies_button.click()
-
     time.sleep(3)
+    accept_cookies_button.click()
 
     # Find and validate labels' color
     label_selectors = [
@@ -35,6 +34,7 @@ def test_validate_contact_form(browser):
     submit_button = WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
     )
+    time.sleep(3)
     submit_button.click()
 
     # Validate required fields are highlighted after submit

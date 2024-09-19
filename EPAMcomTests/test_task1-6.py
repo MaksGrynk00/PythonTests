@@ -13,6 +13,7 @@ def test_epam_search(browser, search_term):
     accept_cookies_button = WebDriverWait(browser, 20).until(
         EC.element_to_be_clickable((By.XPATH, ".//button[text()='Accept All']"))
     )
+    time.sleep(3)
     accept_cookies_button.click()
 
     # Find and click Search icon

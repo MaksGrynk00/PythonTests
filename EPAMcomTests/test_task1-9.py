@@ -16,6 +16,7 @@ def test_download_epam_glance(browser, downloads):
     accept_cookies_button = WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.XPATH, ".//button[text()='Accept All']"))
     )
+    time.sleep(3)
     accept_cookies_button.click()
 
     # Scroll to a specific position within the page (adjust as needed)

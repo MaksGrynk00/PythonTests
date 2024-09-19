@@ -1,4 +1,5 @@
 import pytest
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -13,9 +14,10 @@ def test_check_policy_availability(browser, expected_policy):
     browser.get("https://www.epam.com")
 
     # Click the "Accept All" cookies button (modify timeout if needed)
-    accept_cookies_button = WebDriverWait(browser, 35).until(
+    accept_cookies_button = WebDriverWait(browser, 20).until(
         EC.element_to_be_clickable((By.XPATH, ".//button[text()='Accept All']"))
     )
+    time.sleep(3)
     accept_cookies_button.click()
 
     # Scroll to the bottom of the page

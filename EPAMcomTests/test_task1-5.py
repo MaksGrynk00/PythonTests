@@ -1,4 +1,5 @@
 import pytest
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -16,9 +17,10 @@ def test_check_location_switching(browser, region):
     browser.get("https://www.epam.com/about")
 
     # Click the "Accept All" cookies button (modify if needed)
-    accept_cookies_button = WebDriverWait(browser, 30).until(
+    accept_cookies_button = WebDriverWait(browser, 20).until(
         EC.element_to_be_clickable((By.XPATH, ".//button[text()='Accept All']"))
     )
+    time.sleep(3)
     accept_cookies_button.click()
 
     # Scroll to a specific position within the page (optional)
