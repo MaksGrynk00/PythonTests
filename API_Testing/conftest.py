@@ -1,9 +1,9 @@
 import pytest
-import requests
+import os
 
 # login User test
 @pytest.fixture
-def api_url1():
+def api_url_login():
     return "https://petstore.swagger.io/v2/user/login"
 
 @pytest.fixture
@@ -14,7 +14,7 @@ def login_credentials():
     }
 # create User api test
 @pytest.fixture
-def api_url2():
+def api_url_user():
     return "https://petstore.swagger.io/v2/user"
 
 @pytest.fixture
@@ -31,7 +31,7 @@ def user_data():
     }
 # create pet test
 @pytest.fixture
-def api_url3():
+def api_url_pet():
     return "https://petstore.swagger.io/v2/pet"
 
 @pytest.fixture
@@ -52,9 +52,10 @@ def new_pet_data():
         ],
         "status": "available"
     }
+
 # create user list test
 @pytest.fixture
-def api_url4():
+def api_url_user_createWithArray():
     return "https://petstore.swagger.io/v2/user/createWithArray"
 
 @pytest.fixture
@@ -71,11 +72,7 @@ def user_list():
             "userStatus": 0
         }
     ]
-# update pet test
-@pytest.fixture
-def api_url5():
-    return "https://petstore.swagger.io/v2/pet"
-
+# data to create new pet
 @pytest.fixture
 def updated_pet_data():
     return {
@@ -97,25 +94,24 @@ def updated_pet_data():
 # pet image test
 
 @pytest.fixture
-def api_url6():
+def api_url_uploadImage():
     return "https://petstore.swagger.io/v2/pet/444/uploadImage"
 
 
+# Upload Image relative path to the project.
 @pytest.fixture
 def image_path():
-    return "C:\\Users\\Maksym_Grynkiv\\source\\repos\\MaksGrynk00\\PythonTest\\API_Testing\\th.jpg"  # the image path
+    # Note: It only works if the test is run from the project directory.
+    base_dir = os.path.dirname(os.path.realpath(__file__))
+    image_path = os.path.join(base_dir, 'th.jpg')  # relative path to your image
+    return image_path
 
-# delete pet test
-@pytest.fixture
-def api_url7():
-    return "https://petstore.swagger.io/v2/pet"
 
 @pytest.fixture
 def pet_id():
     return 444  # Replace with the actual pet ID you want to delete
 
 # User loguot test
-
 @pytest.fixture
-def api_url8():
+def api_url_logOut():
     return "https://petstore.swagger.io/v2/user/logout"

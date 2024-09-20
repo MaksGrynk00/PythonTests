@@ -1,11 +1,10 @@
-import pytest
 import requests
 
 """	Verify that allows deleting Pet  """
 
-def test_delete_pet(api_url7, pet_id):
+def test_delete_pet(api_url_pet, pet_id):
     # Construct the deletion URL with the provided pet ID
-    delete_url = f"{api_url7}/{pet_id}"
+    delete_url = f"{api_url_pet}/{pet_id}"
 
     # Make the DELETE request
     response = requests.delete(delete_url)

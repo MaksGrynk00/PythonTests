@@ -1,11 +1,10 @@
-import pytest
 import requests
 
 """ Verify that allows login as a User """
 
-def test_login_user(api_url1, login_credentials):
+def test_login_user(api_url_login, login_credentials):
     # Build the request URL with query parameters
-    url = f"{api_url1}?username={login_credentials['username']}&password={login_credentials['password']}"
+    url = f"{api_url_login}?username={login_credentials['username']}&password={login_credentials['password']}"
 
     # Make the GET request
     response = requests.get(url)

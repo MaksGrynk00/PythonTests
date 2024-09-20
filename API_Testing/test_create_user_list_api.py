@@ -1,14 +1,13 @@
-import pytest
 import requests
 import json
 """ 	Verify that allows creating the list of Users """
 
-def test_create_user_list(api_url4, user_list):
+def test_create_user_list(api_url_user_createWithArray, user_list):
     # Convert user list to JSON string
     json_data = json.dumps(user_list)
 
     # Make the POST request with JSON data
-    response = requests.post(api_url4, headers={'Content-Type': 'application/json'}, data=json_data)
+    response = requests.post(api_url_user_createWithArray, headers={'Content-Type': 'application/json'}, data=json_data)
 
     # Assert successful status code (200)
     assert response.status_code == 200

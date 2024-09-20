@@ -1,11 +1,8 @@
-import pytest
 import requests
 
-
-
-def test_logout_user(api_url8):
+def test_logout_user(api_url_logOut):
     # Make the GET request for logout
-    response = requests.get(api_url8)
+    response = requests.get(api_url_logOut)
 
     # Assert successful status code (200)
     assert response.status_code == 200
