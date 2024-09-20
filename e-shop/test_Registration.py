@@ -41,5 +41,4 @@ def test_verify_registration(browser, first_name_length):
     # Assert successful registration message
     assert success_message.text == "Your registration completed", "Unexpected registration message"
 
-    print(f"Registration successful")
 

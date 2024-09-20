@@ -35,6 +35,3 @@ def test_verify_computer_subgroups(browser):
           EC.presence_of_element_located((By.XPATH, selector))
       )
       assert element is not None, f"Sub-group '{name}' not found in left navigation"
-
-  print("Sub-groups for 'Computers' group verified successfully!")
-  browser.quit()

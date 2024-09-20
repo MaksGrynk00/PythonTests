@@ -14,7 +14,6 @@ def test_verify_items_per_page(browser):
     initial_grid_elements = len(
         browser.find_elements(By.CSS_SELECTOR, ".product-grid > .item-box")
     )
-    print(f"Initial number of elements in grid: {initial_grid_elements}")
 
     # Assert initial grid element count is greater than zero
     assert initial_grid_elements > 0, "No product items found in the grid."
@@ -33,7 +32,3 @@ def test_verify_items_per_page(browser):
 
     # Assert 4 items are displayed after changing page size
     assert post_change_elements == 4, f"Expected 4 items, found {post_change_elements}"
-
-    print("Items per page change verified.")
-
-    browser.quit()

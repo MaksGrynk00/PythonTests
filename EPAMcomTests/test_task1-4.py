@@ -33,4 +33,3 @@ def test_check_policy_availability(browser, expected_policy):
 
     # Assert the presence of the expected policy
     assert any(link.text == expected_policy for link in policy_links), f"Policy '{expected_policy}' not found on the page."
-    print(f"Policy '{expected_policy}' found successfully.")

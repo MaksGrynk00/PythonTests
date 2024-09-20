@@ -22,7 +22,6 @@ def test_check_theme_switch(browser):
     )
     # Assert theme and print the result
     assert theme_label.is_displayed(), "Initial theme mismatch. Expected: Dark Mode"
-    print("Initial theme: Dark Mode")
 
     # Locate the toggle element
     toggle_element = WebDriverWait(browser, 10).until(
@@ -40,4 +39,3 @@ def test_check_theme_switch(browser):
     )
 
     assert new_theme_label_locator.is_displayed(), f"Theme switch not switched. "
-    print(f"Theme switched to 'Light Mode' ")

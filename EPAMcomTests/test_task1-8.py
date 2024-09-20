@@ -30,4 +30,3 @@ def test_check_company_logo(browser):
 
     # Verify that the expected URL is loaded
     assert browser.current_url == "https://www.epam.com/", f"Error: Expected URL 'https://www.epam.com/' but got {browser.current_url}"
-    print("Success! Clicking the company logo leads to the main page.")

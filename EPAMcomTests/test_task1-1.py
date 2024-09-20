@@ -6,4 +6,3 @@ def test_check_title(browser, url1, expected_title="EPAM | Software Engineering 
 
     # Assert the actual title matches the expected title
     assert actual_title == expected_title, f"Title mismatch for {url1}. Expected: '{expected_title}', Actual: '{actual_title}'"
-    print(f"Title for {url1} is correct: {actual_title}")

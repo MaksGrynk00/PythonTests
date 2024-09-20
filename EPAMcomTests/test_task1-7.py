@@ -46,4 +46,3 @@ def test_validate_contact_form(browser):
         assert (
                 color_after_submit != colors_before[selector]
         ), f"Color of '{label_element.text}' did not change after submitting the form."
-        print(f"Color of '{label_element.text}' changed after submitting the form.")

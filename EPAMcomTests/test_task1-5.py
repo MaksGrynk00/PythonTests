@@ -47,7 +47,6 @@ def test_check_location_switching(browser, region):
 
     # Click the region link
     region_link.click()
-    print(f"{region} region link clicked")
 
     # Locate the element that should be displayed after switching
     displayed_element = WebDriverWait(browser, 10).until(
@@ -58,5 +57,3 @@ def test_check_location_switching(browser, region):
 
     # Assert the element is displayed after switching
     assert displayed_element.is_displayed(), f"{regions[region]} element not found after switching."
-
-    print(f"{region} location switch successful")

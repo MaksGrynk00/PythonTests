@@ -1,5 +1,3 @@
-import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -37,5 +35,3 @@ def test_verify_sorting_options(browser):
     fourth_option = sorting_options[fourth_option_index]
     Select(sorting_dropdown).select_by_value(fourth_option)
     assert fourth_option in browser.current_url, f"URL does not reflect fourth option: {fourth_option}"
-
-    print("Sorting options verified successfully.")

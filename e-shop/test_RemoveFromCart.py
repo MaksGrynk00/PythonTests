@@ -12,13 +12,12 @@ def test_verify_remove_from_cart(browser):
         )
     )
     first_product_item.click()
-    print("Click on First product")
 
     # Find product title within product-item
     product_title = WebDriverWait(browser, 10).until(
         EC.presence_of_element_located((By.XPATH, "//div[@class='product-name']//h1[@itemprop='name']"))
     ).text
-    print(f"First product title: {product_title}")
+
 
     # Find and click "Add to Cart" button
     add_to_cart_button = WebDriverWait(browser, 5).until(
@@ -26,7 +25,7 @@ def test_verify_remove_from_cart(browser):
             (By.XPATH, ".//input[@type='button' and @value='Add to cart']")
         )
     )
-    print("Click on Add to cart button")
+
     add_to_cart_button.click()
 
     # Assert success message
@@ -34,7 +33,7 @@ def test_verify_remove_from_cart(browser):
         EC.presence_of_element_located((By.CSS_SELECTOR, ".content"))
     )
     assert "shopping cart" in success_message.text, "Success message doesn't contain 'shopping cart'"
-    print("Success: Product added to shopping cart.")
+
 
     # Navigate to shopping cart page
     cart_link = WebDriverWait(browser, 10).until(
@@ -51,7 +50,7 @@ def test_verify_remove_from_cart(browser):
 
     # Find "Remove" checkbox for the product
     remove_checkbox = browser.find_element(By.NAME, "removefromcart")
-    print("Remove check-box found in cart table.")
+
     remove_checkbox.click()
 
     # Find and click "Update shopping cart" button
@@ -66,4 +65,4 @@ def test_verify_remove_from_cart(browser):
     empty_cart_text = empty_cart_message.text
 
     assert "empty" in empty_cart_text.lower(), f"Product '{product_title}' might not be removed"
-    print(f"Success: Product '{product_title}' removed from cart.")
+

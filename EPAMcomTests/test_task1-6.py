@@ -46,4 +46,3 @@ def test_epam_search(browser, search_term):
 
     # Verify the presence of search results
     assert results_counter.is_displayed(), "Search results counter not found"
-    print(f"Search results found for '{search_term}': {results_counter.text}")

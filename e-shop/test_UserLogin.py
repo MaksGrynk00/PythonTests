@@ -1,5 +1,3 @@
-import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -42,5 +40,3 @@ def test_verify_login(browser):
 
     # Assert user email is correct
     assert user_email.text == "bdkcjns@cdsjn.dd", "Incorrect user email after login"
-
-    print("Login successful!")

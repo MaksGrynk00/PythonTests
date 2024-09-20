@@ -42,5 +42,3 @@ def test_download_epam_glance(browser, downloads):
 
     # assert the file exists
     assert len(expected_file_path) > 0, f"Downloaded file not found: {expected_file_path}"
-
-    print("File downloaded successfully.")

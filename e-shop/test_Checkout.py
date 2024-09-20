@@ -22,7 +22,6 @@ def test_verify_checkout(browser):
       )
   )
   product_title = product_title.text
-  print(f"First product title: {product_title}")
 
   # Find and click "Add to Cart" button
   add_to_cart_button = WebDriverWait(browser, 5).until(
@@ -30,7 +29,6 @@ def test_verify_checkout(browser):
           (By.XPATH, ".//input[@type='button' and @value='Add to cart']")
       )
   )
-  print("Click on Add to cart button")
   add_to_cart_button.click()
 
   # Wait for success message
@@ -38,7 +36,6 @@ def test_verify_checkout(browser):
       EC.presence_of_element_located((By.CSS_SELECTOR, ".content"))
   )
   success_text = success_message.text
-  print("Success: Product added to shopping cart.")
 
   # Navigate to shopping cart page
   # Click the "shopping cart" link in the page header
@@ -54,7 +51,6 @@ def test_verify_checkout(browser):
       )
   )
   assert cart_product_title.text == product_title, "Product title mismatch in cart"
-  print("Product in shopping cart")
 
   # Agree with the terms of service
   termsofservice = browser.find_element(By.NAME, "termsofservice")
